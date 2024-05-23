@@ -24,6 +24,57 @@ function intIncrease(str){
 
 bai1();
 
+function bai2() {
+    const btn = document.querySelector('.bai2 button');
+    const input = document.querySelector('.bai2 input');
+    let result = document.querySelector('.bai2 .result');
+
+    btn.addEventListener('click', function() {
+        const inputArray = input.value.split(',').map(Number);
+        const mostFrequentNumber = findMostFrequentNumber(inputArray);
+        console.log(mostFrequentNumber);
+        result.innerText = mostFrequentNumber;
+    });
+}
+
+function findMostFrequentNumber(arr) {
+    const frequency = {};
+    let maxCount = 0;
+    let mostFrequentNumber = null;
+
+    for (let num of arr) {
+        frequency[num] = (frequency[num] || 0) + 1;
+        if (frequency[num] > maxCount) {
+            maxCount = frequency[num];
+            mostFrequentNumber = num;
+        }
+    }
+
+    return mostFrequentNumber;
+}
+
+bai2();
+
+function bai3() {
+    const btn = document.querySelector('.bai3 button');
+    const input = document.querySelector('.bai3 input');
+    let result = document.querySelector('.bai3 .result');
+
+    btn.addEventListener('click', function() {
+        const inputArray = input.value.split(',').map(Number);
+        const uniqueArray = deleteAgainIteam(inputArray);
+        console.log(uniqueArray);
+        result.innerText = uniqueArray.join(', ');
+    });
+}
+
+function deleteAgainIteam(arr) {
+    return Array.from(new Set(arr));
+}
+
+bai3();
+
+
 function bai4(){
     const btn = document.querySelector('.bai4 button');
     const input = document.querySelector('.bai4 input');
@@ -180,4 +231,4 @@ function threemiddleWord(str) {
 bai8();
 
 
-bai8();
+
