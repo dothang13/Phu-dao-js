@@ -34,10 +34,27 @@ async function logData(){
             console.log(option.name + value)
         })
     });
+
+    //Bài 2
+    function findTestbundle(item) { 
+        return item.title === 'Test bundle';
     }
+
+    let testbundleItem = data.data.items.find(findTestbundle);
+
+    if (testbundleItem) {
+        let sumTestbundle = testbundleItem.variants.reduce((accumulator, variant) => {
+            return accumulator + variant.price;
+        }, 0);
+    console.log('SumTestbundle: ', sumTestbundle);
+    }
+    //Bài 3
+    const soldOutItems = data.data.items.filter(item => 
+        item.variants.every(variant => variant.available === 0)
+    );
+
+    console.log('Sold out items:', soldOutItems);
+
+    //Bài 4
+}
 logData()
-
-
-
-
-
