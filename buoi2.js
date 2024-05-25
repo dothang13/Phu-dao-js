@@ -2,6 +2,7 @@ async function logData(){
     const response = await fetch(
         "https://svc-0-staging-usf.hotyon.com/search?q=&apiKey=1fedccb4-262f-4e65-ae6d-d01e8024fe83"
     );
+    //Bài 1
     const data = await response.json();
 
     let variant = data.data.items[0].variants[0];
@@ -35,6 +36,7 @@ async function logData(){
     });
     }
 logData()
+
 
 
 

@@ -197,6 +197,29 @@ function threemiddleWord(str) {
     }
 }
 
+function bai7(){
+    const btn = document.querySelector('.bai7 button');
+    const input = document.querySelector('.bai7 input');
+
+    let value;
+    let result = document.querySelector('.bai7 .result');
+    btn.addEventListener('click', function (){
+        value = nextString(input.value);
+        console.log(value);
+        result.innerText = value;
+    })
+}
+
+function nextString(str){
+    let newStr = '';
+    for(let i = 0; i < str.length; i++){
+        newStr += String.fromCharCode(str.charCodeAt(i) + 1);
+    }
+    return newStr;
+}
+
+bai7();
+
 bai8();
 
 function bai8(){
