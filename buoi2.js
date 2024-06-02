@@ -68,8 +68,6 @@ async function logData() {
                 )
             );
             result.innerHTML = '';
-
-            // Hiển thị các mặt hàng và biến thể đã lọc
             if (filteredItems.length > 0) {
                 filteredItems.forEach(item => {
                     const itemTitle = document.createElement('h3');

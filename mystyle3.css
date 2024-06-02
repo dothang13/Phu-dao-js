@@ -1,0 +1,26 @@
+#loadButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.listButton {
+    display: flex;
+    margin-top: 20px;
+}
+
+#listButton1,
+#listButton2 {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+}
+
+#inputFind {
+    display: none;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 20px;
+}

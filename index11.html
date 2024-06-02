@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Loader</title>
+    <style>
+        #loadButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="loadButton">Tải sản phẩm</button>
+
+    <script>
+        document.getElementById('loadButton').addEventListener('click', function() {
+            const button = this;
+            button.disabled = true;
+            button.textContent = 'Đang tải sản phẩm…';
+
+            fetch('https://svc-0-staging-usf.hotyon.com/search?apiKey=1fedccb4-262f-4e65-ae6d-d01e8024fe83')
+                .then(response => response.json())
+                .then(data => {
+                    const productCount = data.length;
+                    button.textContent = `Đã tải xong ${productCount} sản phẩm`;
+                })
+                .catch(error => {
+                    button.textContent = 'Có lỗi xảy ra khi tải sản phẩm';
+                    console.error('Error fetching products:', error);
+                })
+                .finally(() => {
+                    button.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
